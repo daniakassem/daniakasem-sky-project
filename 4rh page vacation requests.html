@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Academy - Vacation Requests</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+        .navbar {
+            background-color: #28a745;
+            padding: 10px 20px;
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: white;
+        }
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+        }
+        .navbar-icons {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .header-row {
+            margin-top: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        .vacation-header {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .vacation-header i {
+            margin-right: 10px;
+        }
+        .select-all {
+            margin-top: 10px;
+        }
+        .vacation-request-item {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .pagination {
+            justify-content: center;
+        }
+        .btn-decline {
+            background-color: green;
+            border: 1px solid #28a745;
+            color: #28a745;
+        }
+        .btn-accept {
+            background-color: white;
+            color: #28a745;
+        }
+        .row-cols-3 .col {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Sky Academy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/C:\Users\bahal\OneDrive\Desktop\1st homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/C:\Users\bahal\OneDrive\Desktop\2ndpage.html">Profiles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reports.html">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Settings">Settings</a>
+                    </li>
+                </ul>
+                <!-- Bell and Profile Icons -->
+                <div>
+                    <i class="fas fa-bell navbar-icons me-3"></i>
+                    <i class="fas fa-user navbar-icons"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 pt-4">
+        <!-- Header Row with Vacation Requests and Search -->
+        <div class="header-row d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="vacation-header">
+                <i class="fa-solid fa-list-check" style="color: #28a745;"></i>
+                <span>Vacation Requests</span>
+            </div>
+			
+            <div class="input-group mt-3 mt-md-0" style="width: 100%; max-width: 300px;">
+				
+                <input type="text" class="form-control" placeholder="Search Vacation Requests" id="searchInput">
+				
+                <button class="btn btn-outline-secondary btn-sm" type="button" id="searchBtn"><i class="fas fa-search me-2"></i></button> 		
+            </div>		
+        </div>
+		
+         <!-- Horizontal line under the section -->
+		
+		
+		
+        <!-- Vacation Requests as Cards -->
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-4" id="vacationList">
+
+			
+			<div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+						<input class="form-check-input" type="checkbox" value="1">
+                            <img src="/C:\Users\bahal\OneDrive\Desktop\female emplyee.png" alt="Ahmad Attar" class="rounded-circle mb-3" width="80">
+                            <h5>Mays Ahmad</h5>
+                            <p>Submitted on: 8/3/2024</p>
+                            <p>Duration: 3 Weeks (3/4/2023 - 24/4/2023)</p>
+                            <p>Salary: 1500 AED</p>
+							
+                            <button class="btn btn-success">Approve</button>
+                            <button class="btn btn-danger">Decline</button>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+						<input class="form-check-input" type="checkbox" value="1">
+                            <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Ahmad Attar" class="rounded-circle mb-3" width="80">
+                            <h5>khaled Attar</h5>
+                            <p>Submitted on: 2/3/2024</p>
+                            <p>Duration: 2 Weeks (5/4/2023 - 19/4/2023)</p>
+                            <p>Salary: 1050 AED</p>
+                            <button class="btn btn-success">Approve</button>
+                            <button class="btn btn-danger">Decline</button>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-3">
+                    <div class="card">
+					
+                        <div class="card-body text-center">
+						<input class="form-check-input" type="checkbox" value="1">
+                            <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Ahmad Attar" class="rounded-circle mb-3" width="80">
+                            <h5>Adam baha </h5>
+                            <p>Submitted on: 1/3/2024</p>
+                            <p>Duration:
+							2 Weeks (1/4/2023 - 14/4/2023)</p>
+                            <p>Salary: 1000 AED</p>
+                            <button class="btn btn-success">Approve</button>
+                            <button class="btn btn-danger">Decline</button>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-3">
+                    <div class="card">
+					
+                        <div class="card-body text-center">
+						<input class="form-check-input" type="checkbox" value="1">
+                            <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Ahmad Attar" class="rounded-circle mb-3" width="80">
+                            <h5>Adam baha </h5>
+                            <p>Submitted on: 1/3/2024</p>
+                            <p>Duration:
+							2 Weeks (1/4/2023 - 14/4/2023)</p>
+                            <p>Salary: 1000 AED</p>
+                            <button class="btn btn-success">Approve</button>
+                            <button class="btn btn-danger">Decline</button>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-3">
+                    <div class="card">
+					
+                        <div class="card-body text-center">
+						<input class="form-check-input" type="checkbox" value="1">
+                            <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Ahmad Attar" class="rounded-circle mb-3" width="80">
+                            <h5>Adam baha </h5>
+                            <p>Submitted on: 1/3/2024</p>
+                            <p>Duration:
+							2 Weeks (1/4/2023 - 14/4/2023)</p>
+                            <p>Salary: 1000 AED</p>
+                            <button class="btn btn-success">Approve</button>
+                            <button class="btn btn-danger">Decline</button>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-3">
+                    <div class="card">
+					
+                        <div class="card-body text-center">
+						<input class="form-check-input" type="checkbox" value="1">
+                            <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Ahmad Attar" class="rounded-circle mb-3" width="80">
+                            <h5>Adam baha </h5>
+                            <p>Submitted on: 1/3/2024</p>
+                            <p>Duration:
+							2 Weeks (1/4/2023 - 14/4/2023)</p>
+                            <p>Salary: 1000 AED</p>
+                            <button class="btn btn-success">Approve</button>
+                            <button class="btn btn-danger">Decline</button>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-3">
+                    <div class="card">
+					
+                        <div class="card-body text-center">
+						<input class="form-check-input" type="checkbox" value="1">
+                            <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Ahmad Attar" class="rounded-circle mb-3" width="80">
+                            <h5>Adam baha </h5>
+                            <p>Submitted on: 1/3/2024</p>
+                            <p>Duration:
+							2 Weeks (1/4/2023 - 14/4/2023)</p>
+                            <p>Salary: 1000 AED</p>
+                            <button class="btn btn-success">Approve</button>
+                            <button class="btn btn-danger">Decline</button>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-3">
+                    <div class="card">
+					
+                        <div class="card-body text-center">
+						<input class="form-check-input" type="checkbox" value="1">
+                            <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Ahmad Attar" class="rounded-circle mb-3" width="80">
+                            <h5>Adam baha </h5>
+                            <p>Submitted on: 1/3/2024</p>
+                            <p>Duration:
+							2 Weeks (1/4/2023 - 14/4/2023)</p>
+                            <p>Salary: 1000 AED</p>
+                            <button class="btn btn-success">Approve</button>
+                            <button class="btn btn-danger">Decline</button>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-3">
+                    <div class="card">
+					
+                        <div class="card-body text-center">
+						<input class="form-check-input" type="checkbox" value="1">
+                            <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Ahmad Attar" class="rounded-circle mb-3" width="80">
+                            <h5>Adam baha </h5>
+                            <p>Submitted on: 1/3/2024</p>
+                            <p>Duration:
+							2 Weeks (1/4/2023 - 14/4/2023)</p>
+                            <p>Salary: 1000 AED</p>
+                            <button class="btn btn-success">Approve</button>
+                            <button class="btn btn-danger">Decline</button>
+                        </div>
+                    </div>
+                </div>
+				
+				
+		
+			</div>
+            <!-- More vacation request cards -->
+			<div class="container-page">
+        <!-- Pagination Wrapped in a Container with Background Color -->
+<div class="container bg-light py-3 mt-4 rounded" style="background-color: #f8f9fa;">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+                <a class="page-link text-muted" style="border-color: grey;">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link text-muted" href="#" style="border-color: grey;">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link text-muted" href="#" style="border-color: grey;">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link text-muted" href="#" style="border-color: grey;">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link text-muted" href="#" style="border-color: grey;">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+</div>
+    </div>
+	
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Handle "Select All" functionality
+        document.getElementById('selectAll').addEventListener('click', function() {
+            let checkboxes = document.querySelectorAll('.form-check-input');
+            checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+        });
+
+        // Handle Search functionality (simple search logic)
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.querySelectorAll('.vacation-request-item');
+            items.forEach(item => {
+                let text = item.innerText.toLowerCase();
+                item.style.display = text.includes(input) ? '' : 'none';
+            });
+        });
+    </script>
+	<script>
+        const filterRequests = () => {
+  const searchbox = document.getElementById("searchInput").value.toUpperCase();
+  const requestItems = document.getElementById("vacationContainer");
+  const cards = document.querySelectorAll(".vacation-card");
+  const requestNames = requestItems.getElementsByTagName("h5");
+
+  for (let i = 0; i < requestNames.length; i++) {
+      let match = cards[i].getElementsByTagName('h5')[0];
+
+      if (match) {
+          let textvalue = match.textContent || match.innerHTML;
+
+          if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
+              cards[i].style.display = ""; // Show card if match
+          } else {
+              cards[i].style.display = "none"; // Hide card if no match
+          }
+      }
+  }
+};
+      </script>
+	  <script>
+        // JavaScript to handle the search functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the search input field and the list of vacation cards
+            const searchInput = document.getElementById('searchInput');
+            const vacationCards = document.querySelectorAll('.vacation-card');
+
+            // Add event listener to the search input
+            searchInput.addEventListener('input', function () {
+                const searchText = searchInput.value.toLowerCase();
+
+                // Loop through all vacation cards and display the ones that match the search
+                vacationCards.forEach(function (card) {
+                    const cardName = card.querySelector('h5').innerText.toLowerCase(); // Get the name of the vacation request
+                    const cardDetails = card.querySelectorAll('p'); // Get other details like date and salary
+
+                    let detailsText = '';
+                    cardDetails.forEach(detail => detailsText += detail.innerText.toLowerCase());
+
+                    // Check if the search text is found in the name or other details
+                    if (cardName.includes(searchText) || detailsText.includes(searchText)) {
+                        card.style.display = ''; // Show the card
+                    } else {
+                        card.style.display = 'none'; // Hide the card
+                    }
+                });
+            });
+        });
+	
+    </script>
+</body>
+</html>

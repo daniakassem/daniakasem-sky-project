@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Academy - Vacation Requests</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+	
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+		.nav-link.active {
+            font-weight: bold;
+		}
+        .navbar {
+            background-color: #28a745;
+            padding: 10px 20px;
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: white;
+        }
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+        }
+        .navbar-icons {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .header-row {
+            margin-top: 20px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        .vacation-header {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .vacation-header i {
+            margin-right: 10px;
+        }
+        .select-all {
+            margin-top: 10px;
+        }
+        .vacation-request-item {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-decline {
+            background-color: green;
+            border: 1px solid #28a745;
+            color: #ffffff;
+        }
+        .btn-accept {
+            background-color: white;
+            color: #28a745;
+        }
+        .card-img-top {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        @media (max-width: 767.98px) {
+            .navbar-toggler {
+                border-color: #ffffff;
+            }
+            .navbar-toggler-icon {
+                background-color: #ffffff;
+            }
+			
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Sky Academy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/C:\Users\bahal\OneDrive\Desktop\2ndpage.html">Profiles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reports.html">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="Settings.html">Settings</a>
+                    </li>
+                </ul>
+                <!-- Bell and Profile Icons -->
+                <div>
+                    <i class="fas fa-bell navbar-icons me-3"></i>
+                    <i class="fas fa-user navbar-icons"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 pt-4">
+        <!-- Header Row with Vacation Requests and Search -->
+        <div class="header-row d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="vacation-header">
+                <i class="fa-solid fa-list-check" style="color: #28a745;"></i>
+                <span>Vacation Requests</span>
+            </div>
+			
+            <div class="input-group mt-3 mt-md-0" style="width: 100%; max-width: 300px;">
+				
+                <input type="text" class="form-control" placeholder="Search Vacation Requests" id="searchInput">
+				
+                <button class="btn btn-outline-secondary btn-sm" type="button" id="searchBtn"><i class="fas fa-search me-2"></i></button> 		
+            </div>		
+        </div>
+
+        <!-- Line -->
+        <!-- Search and Filter -->
+        <!-- Select All Checkbox -->
+		<div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="form-check select-all" >
+            <input class="form-check-input" type="checkbox" id="selectAll">
+            <label class="form-check-label" for="selectAll">Select All</label>
+        </div>
+		
+            <div class="d-flex">
+                
+                <button class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-filter fa-2x"></i>
+                </button>
+            </div>
+        </div>
+		<!-- ===========================AYA==============================
+		<form class="d-flex align-items-center justify-content-between" role="search">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-list me-2 fa-2x"></i>
+                <p class="text mb-0">Vacation Requests</p>
+            </div>
+            <div class="search-bar d-flex align-items-center">
+                <i class="fas fa-search me-2"></i>
+                <input type="text" class="form-control" placeholder="Search...">
+            </div>
+        </form>
+
+        <hr>
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <input type="checkbox" id="select-all">
+                <label for="select-all">Select All</label>
+            </div>
+				<div class="d-flex">
+
+                <button class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-filter fa-2x"></i>
+                </button>
+				</div>
+        </div>-->
+		
+		
+
+        <!-- Vacation Requests as Cards -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4 " id="vacationList"  >
+		
+		
+            <!-- Example Vacation Request Cards -->
+            <div class="col" class="fas fa-filter">
+
+			
+                <div class="border-top-0 card vacation-request-item" >
+                    <div class="card-body text-center">					
+                        <input class="form-check-input" type="checkbox" value="1">						
+                        <img src="/C:\Users\bahal\OneDrive\Desktop\female emplyee.png" alt="Mays Ahmad" class="card-img-top rounded-circle mb-3">
+                        <h5 class="card-title">Mays Ahmad</h5>
+                        <p class="card-text">Submitted on: 8/3/2024</p>
+                        <p class="card-text">Duration: 3 Weeks (3/4/2023 - 24/4/2023)</p>
+                        <p class="card-text">Salary: 1500 AED</p>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-success btn-sm">Approve</button>
+                            <button class="btn btn-danger btn-sm">Decline</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border-top-0 card vacation-request-item">
+                    <div class="card-body text-center">
+                        <input class="form-check-input" type="checkbox" value="1">
+                        <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Khaled Attar" class="card-img-top rounded-circle mb-3">
+                        <h5 class="card-title">Khaled Attar</h5>
+                        <p class="card-text">Submitted on: 2/3/2024</p>
+                        <p class="card-text">Duration: 2 Weeks (5/4/2023 - 19/4/2023)</p>
+                        <p class="card-text">Salary: 1050 AED</p>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-success btn-sm">Approve</button>
+                            <button class="btn btn-danger btn-sm">Decline</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="border-top-0 card vacation-request-item">
+                    <div class="card-body text-center">
+                        <input class="form-check-input" type="checkbox" value="1">
+                        <img src="/C:\Users\bahal\OneDrive\Desktop\male employee.png" alt="Adam Baha" class="card-img-top rounded-circle mb-3">
+                        <h5 class="card-title">Adam Baha</h5>
+                        <p class="card-text">Submitted on: 1/3/2024</p>
+                        <p class="card-text">Duration: 2 Weeks (1/4/2023 - 14/4/2023)</p>
+                        <p class="card-text">Salary: 1000 AED</p>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-success btn-sm">Approve</button>
+                            <button class="btn btn-danger btn-sm">Decline</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more vacation request cards as needed -->
+        </div>
+
+        <!-- Pagination -->
+        <!-- Uncomment if needed
+        <nav aria-label="Vacation Request Pagination">
+            <ul class="pagination mt-4">
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+            </ul>
+        </nav>
+        -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Handle "Select All" functionality
+        document.getElementById('selectAll').addEventListener('click', function() {
+            let checkboxes = document.querySelectorAll('.form-check-input');
+            checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+        });
+
+        // Handle Search functionality (simple search logic)
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.querySelectorAll('.vacation-request-item');
+            items.forEach(item => {
+                let text = item.innerText.toLowerCase();
+                item.style.display = text.includes(input) ? '' : 'none';
+            });
+        });
+    </script>
+	<script>
+	const filterRequests = () => {
+    const searchbox = document.getElementById("searchInput").value.toUpperCase();
+    const requestItems = document.getElementById("vacationContainer");
+    const cards = document.querySelectorAll(".vacation-card");
+    const requestNames = requestItems.getElementsByTagName("h5");
+
+    for (let i = 0; i < requestNames.length; i++) {
+        let match = cards[i].getElementsByTagName('h5')[0];
+
+        if (match) {
+            let textvalue = match.textContent || match.innerHTML;
+
+            if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
+                cards[i].style.display = ""; // Show card if match
+            } else {
+                cards[i].style.display = "none"; // Hide card if no match
+            }
+        }
+    }
+};
+	
+	</script>
+</body>
+</html>
